@@ -1,6 +1,6 @@
-INSERT MANDATORY GIF
+<img src="https://media.giphy.com/media/4oZpTY30l6XtK/giphy.gif" width="100%">
 
-# Project Title
+# Cryptogotchi
 
 Text about the project. This would also be a great place to link the game on Netlify.
 
