@@ -3,14 +3,33 @@
   margin: 0;
 }
 
+/* @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"); */
+
+/* @font-face {
+  font-family: "DotGothic16";
+  src: url("DotGothic16-Regular.woff2") format("woff2"),
+    url("DotGothic16-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+} */
+
+:root {
+  --background-blue: rgb(107, 157, 250);
+}
+
+h2 {
+  font-family: "DotGothic16", sans-serif;
+}
+
 body {
-  background-color: rgb(107, 157, 250);
+  background-color: var(--background-blue);
   height: 100vh;
   width: 100vw;
 }
 
 .tama-frame {
-  height: 90%;
+  height: 70%;
   width: 100%;
   display: flex;
   justify-content: center;
