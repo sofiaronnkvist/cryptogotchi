@@ -3,8 +3,29 @@
   margin: 0;
 }
 
-div {
-  width: 100px;
-  height: 100px;
-  background-color: blue;
+body {
+  background-color: rgb(107, 157, 250);
+  height: 100vh;
+  width: 100vw;
+}
+
+.tama-frame {
+  height: 90%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.tama-buttons {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(-30px);
+}
+
+.crypto-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
