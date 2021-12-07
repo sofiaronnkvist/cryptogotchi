@@ -24,23 +24,27 @@ body {
 }
 
 .tama-frame {
-  height: 80%;
+  height: 50%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+  flex-direction: row;
   position: relative;
+  top: 20vh;
+  flex-wrap: wrap;
 }
 
 .frame-img {
-  height: 60%;
+  height: 100%;
 }
 
 .buttons-container {
   display: flex;
   gap: 1rem;
-  transform: translateY(-70px);
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 45px;
 }
 
 .tama-buttons {
@@ -63,6 +67,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  margin-top: 5rem;
 }
 
 .crypto-button {
@@ -85,13 +90,20 @@ body {
 .coins-container {
   height: 140px;
   width: 30px;
-  /* transform: translate(-60px, -280px); */
-  background-color: gray;
   position: absolute;
   bottom: 0;
   left: 0;
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .coin-styling {
-  width: 20px;
+  width: 25px;
+}
+
+.tama-screen {
+  height: 150px;
+  width: 150px;
+  position: absolute;
+  border-radius: 20px;
 }

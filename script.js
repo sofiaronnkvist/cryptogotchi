@@ -20,7 +20,7 @@ buyButton.addEventListener("click", () => {
   coinsContainer.appendChild(newCoin);
 
   // console.log(coins);
-  if (coins.length > 9) {
+  if (coins.length > 10) {
     coins = [];
     while (coinsContainer.firstChild) {
       coinsContainer.removeChild(coinsContainer.firstChild);
@@ -34,14 +34,11 @@ buyButton.addEventListener("click", () => {
 
 const sellButton = document.querySelector(".sell-button");
 
-// console.log(lastCoin);
-
 sellButton.addEventListener("click", () => {
   coins.pop("Coin");
   // console.log(coins);
   const lastCoin = document.querySelector(".coin-styling:last-child");
-  // console.log(lastCoin);
-  if (coins.length > 0) {
+  if (coins.length >= 0) {
     coinsContainer.removeChild(lastCoin);
   }
 });
