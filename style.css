@@ -3,23 +3,18 @@
   margin: 0;
 }
 
-/* @import url("https://fonts.googleapis.com/css2?family=DotGothic16&display=swap"); */
-
-/* @font-face {
+@font-face {
   font-family: "DotGothic16";
-  src: url("DotGothic16-Regular.woff2") format("woff2"),
-    url("DotGothic16-Regular.woff") format("woff");
+  src: url("/fonts/DotGothic16-Regular.woff") format("woff2"),
+    url("/fonts/DotGothic16-Regular.woff2") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
-} */
+}
 
 :root {
   --background-blue: rgb(107, 157, 250);
-}
-
-h2 {
-  font-family: "DotGothic16", sans-serif;
+  --font: "DotGothic16", sans-serif;
 }
 
 body {
@@ -29,22 +24,74 @@ body {
 }
 
 .tama-frame {
-  height: 70%;
+  height: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+}
+
+.frame-img {
+  height: 60%;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 1rem;
+  transform: translateY(-70px);
 }
 
 .tama-buttons {
-  display: flex;
-  gap: 1rem;
-  transform: translateY(-30px);
+  background: #fff;
+  color: inherit;
+  border: 1px solid #000;
+  box-shadow: 3px 3px 3px rgb(26, 25, 25);
+  border-radius: 5px;
+  padding: 3px;
+  cursor: pointer;
+  outline: inherit;
+  font-family: var(--font);
+}
+
+.tama-buttons:active {
+  box-shadow: 1px 1px 1px rgb(26, 25, 25);
 }
 
 .crypto-container {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.crypto-button {
+  background: #fff;
+  color: inherit;
+  border: 1px solid #000;
+  box-shadow: 3px 3px 3px rgb(26, 25, 25);
+  border-radius: 5px;
+  padding: 7px;
+  cursor: pointer;
+  outline: inherit;
+  font-family: var(--font);
+  font-size: 20px;
+}
+
+.crypto-button:active {
+  box-shadow: 1px 1px 1px rgb(26, 25, 25);
+}
+
+.coins-container {
+  height: 140px;
+  width: 30px;
+  /* transform: translate(-60px, -280px); */
+  background-color: gray;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.coin-styling {
+  width: 20px;
 }
