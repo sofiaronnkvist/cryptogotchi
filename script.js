@@ -7,6 +7,23 @@ const coinImage = "./images/coin.svg";
 
 /* Tamagotchi svg */
 
+const tamagotchi = {
+  body: {
+    first: "./images/tamagotchi/tama_first.png",
+    second: "./images/tamagotchi/tama_second.png",
+  },
+  mouth: {
+    normal: "./images/tamagotchi/mouth_normal.png",
+    happy: "./images/tamagotchi/mouth_happy.png",
+    sad: "./images/tamagotchi/mouth_sad.png",
+  },
+  neckwear: {
+    bowtie: "./images/tamagotchi/bowtie.png",
+    normalTie: "./images/tamagotchi/tie_normal.png",
+    headTie: "./images/tamagotchi/tie_head.png",
+  },
+};
+
 /* Buy button */
 
 const buyButton = document.querySelector(".buy-button");
@@ -29,6 +46,15 @@ buyButton.addEventListener("click", () => {
 });
 
 /* Change tie button */
+
+const changeButton = document.querySelector(".change-button");
+const neckImage = document.querySelector(".tama-neck");
+let count = 0;
+
+changeButton.addEventListener("click", () => {
+  const neckwearArray = Object.values(tamagotchi.neckwear);
+  neckImage.src = neckwearArray[++count % neckwearArray.length];
+});
 
 /* Sell button */
 
