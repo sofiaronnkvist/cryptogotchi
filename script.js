@@ -27,6 +27,7 @@ const tamagotchi = {
 /* Buy button */
 
 const buyButton = document.querySelector(".buy-button");
+const mouthImage = document.querySelector(".tama-mouth");
 
 buyButton.addEventListener("click", () => {
   coins.push("Coin");
@@ -36,16 +37,18 @@ buyButton.addEventListener("click", () => {
 
   coinsContainer.appendChild(newCoin);
 
-  // console.log(coins);
   if (coins.length > 10) {
     coins = [];
     while (coinsContainer.firstChild) {
       coinsContainer.removeChild(coinsContainer.firstChild);
     }
   }
+
+  const mouthsArray = Object.values(tamagotchi.mouth);
+  mouthImage.src = mouthsArray[1];
 });
 
-/* Change tie button */
+/* Change tie button mobile */
 
 const changeButton = document.querySelector(".change-button");
 const neckImage = document.querySelector(".tama-neck");
@@ -56,18 +59,43 @@ changeButton.addEventListener("click", () => {
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
+/* Change tie button desktop */
+
+const arrowButton = document.querySelector(".arrow-button");
+
+document.addEventListener("keydown", logKey);
+
+function logKey(event) {
+  if (event.keyCode === 39) {
+    const neckwearArray = Object.values(tamagotchi.neckwear);
+    neckImage.src = neckwearArray[++count % neckwearArray.length];
+  }
+  if (event.keyCode === 37) {
+    const neckwearArray = Object.values(tamagotchi.neckwear);
+    const reverse = neckwearArray.reverse();
+    neckImage.src = reverse[++count % reverse.length];
+  }
+}
+
 /* Sell button */
 
 const sellButton = document.querySelector(".sell-button");
+const mouthsArray = Object.values(tamagotchi.mouth);
 
 sellButton.addEventListener("click", () => {
   coins.pop("Coin");
-  // console.log(coins);
   const lastCoin = document.querySelector(".coin-styling:last-child");
   if (coins.length >= 0) {
     coinsContainer.removeChild(lastCoin);
   }
+  mouthImage.src = mouthsArray[2];
 });
+
+/* Makes the mouth go back to normal */
+
+setInterval(() => {
+  mouthImage.src = mouthsArray[0];
+}, 1000);
 
 /* Crypto for your thoughts button */
 
@@ -80,3 +108,17 @@ cryptoButton.addEventListener("click", () => {
 });
 
 /* Scroll event */
+
+const tamaBody = document.querySelector(".tama-body");
+const screen = document.querySelector(".tama-screen");
+const bodyArray = Object.values(tamagotchi.body);
+
+function scroll(event) {
+  if (event.deltaY < 0) {
+    tamaBody.src = bodyArray[1];
+  } else {
+    tamaBody.src = bodyArray[0];
+  }
+}
+
+screen.addEventListener("wheel", scroll);

@@ -140,3 +140,16 @@ body {
   position: absolute;
   top: 10vh;
 }
+
+.arrow-button {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .change-button {
+    display: none;
+  }
+  .arrow-button {
+    display: block;
+  }
+}
