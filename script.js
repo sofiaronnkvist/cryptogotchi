@@ -110,7 +110,6 @@ cryptoButton.addEventListener("click", () => {
 /* Scroll event */
 
 const tamaBody = document.querySelector(".tama-body");
-const screen = document.querySelector(".tama-screen");
 const bodyArray = Object.values(tamagotchi.body);
 
 function scroll(event) {
@@ -121,4 +120,4 @@ function scroll(event) {
   }
 }
 
-screen.addEventListener("wheel", scroll);
+window.addEventListener("wheel", scroll);
