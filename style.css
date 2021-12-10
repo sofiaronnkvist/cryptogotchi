@@ -121,8 +121,8 @@ body {
 
 .tama-body {
   object-fit: contain;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -135,10 +135,10 @@ body {
 
 .tama-neck {
   object-fit: contain;
-  height: 25%;
-  width: 25%;
+  height: 30%;
+  width: 30%;
   position: absolute;
-  top: 10vh;
+  top: 57%;
 }
 
 .arrow-button {

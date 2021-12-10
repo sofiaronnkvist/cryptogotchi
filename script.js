@@ -59,6 +59,12 @@ changeButton.addEventListener("click", () => {
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
+// changeButton.addEventListener("click", () => {
+//   if (neckImage.src != tamagotchi.neckwear.headTie) {
+//     neckImage.classList.toggle("tie");
+//   }
+// });
+
 /* Change tie button desktop */
 
 const arrowButton = document.querySelector(".arrow-button");
@@ -76,6 +82,24 @@ function logKey(event) {
     neckImage.src = reverse[++count % reverse.length];
   }
 }
+
+/* Styling classes for neckwear */
+
+// const neckwearArray = Object.values(tamagotchi.neckwear);
+
+// if (neckImage.src !== neckwearArray[0]) {
+//   neckImage.classList.toggle("tie");
+// }
+
+// changeButton.addEventListener("click", (event) => {
+//   if (event) {
+//     if ((neckImage.src = neckwearArray[2])) {
+//       neckImage.classList.add("tie");
+//     } else {
+//       neckImage.classList.remove("tie");
+//     }
+//   }
+// });
 
 /* Sell button */
 
@@ -107,7 +131,7 @@ cryptoButton.addEventListener("click", () => {
   );
 });
 
-/* Scroll event */
+/* Scroll event desktop */
 
 const tamaBody = document.querySelector(".tama-body");
 const bodyArray = Object.values(tamagotchi.body);
@@ -121,3 +145,7 @@ function scroll(event) {
 }
 
 window.addEventListener("wheel", scroll);
+
+/* Scroll event mobile */
+
+window.TouchEvent.addEventListener("wheel", scroll);
