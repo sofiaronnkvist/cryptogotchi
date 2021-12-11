@@ -13,7 +13,7 @@
 }
 
 :root {
-  --background-blue: rgb(107, 157, 250);
+  --background-blue: rgb(70, 120, 214);
   --font: "DotGothic16", sans-serif;
 }
 
@@ -24,27 +24,29 @@ body {
 }
 
 .tama-frame {
-  height: 50%;
+  height: 80%;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   position: relative;
-  top: 10vh;
+  top: 5vh;
   flex-wrap: wrap;
 }
 
 .frame-img {
   height: 100%;
+  width: 100%;
+  object-fit: contain;
 }
 
 .buttons-container {
   display: flex;
   gap: 1rem;
   position: absolute;
-  bottom: 0;
-  margin-bottom: 45px;
+  margin-top: 360px;
+  /* margin-bottom: 40%; */
 }
 
 .tama-buttons {
@@ -68,7 +70,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
+  margin-top: 1rem;
 }
 
 .crypto-button {
@@ -92,7 +94,6 @@ body {
   height: 120px;
   width: 25px;
   position: absolute;
-  bottom: 0;
   left: 0;
   display: flex;
   flex-direction: column-reverse;
@@ -103,17 +104,17 @@ body {
 }
 
 .tama-screen {
-  height: 155px;
-  width: 155px;
+  height: 175px;
+  width: 175px;
   position: absolute;
-  border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .tama-animal {
-  height: 155px;
+  height: 175px;
+  width: 85%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -121,24 +122,31 @@ body {
 
 .tama-body {
   object-fit: contain;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 80%;
   position: relative;
 }
 
 .tama-mouth {
   object-fit: contain;
-  height: 30%;
-  width: 30%;
+  height: 20%;
+  width: 20%;
   position: absolute;
 }
 
 .tama-neck {
   object-fit: contain;
   height: 30%;
-  width: 30%;
+  width: 19%;
   position: absolute;
-  top: 57%;
+  top: 50%;
+}
+
+.tie {
+  height: 80%;
+  width: 80%;
+  padding-left: 19px;
+  top: 0%;
 }
 
 .arrow-button {
@@ -152,4 +160,12 @@ body {
   .arrow-button {
     display: block;
   }
+  .buttons-container {
+    margin-top: 400px;
+  }
+  .tama-buttons {
+    font-size: 20px;
+  }
 }
+
+/* @media only screen and (min-width: ); */

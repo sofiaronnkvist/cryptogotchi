@@ -19,7 +19,7 @@ const tamagotchi = {
   },
   neckwear: {
     bowtie: "./images/tamagotchi/bowtie.png",
-    normalTie: "./images/tamagotchi/tie_normal.png",
+    normalTie: "./images/tamagotchi/tie_normal_new.png",
     headTie: "./images/tamagotchi/tie_head.png",
   },
 };
@@ -52,6 +52,7 @@ buyButton.addEventListener("click", () => {
 
 const changeButton = document.querySelector(".change-button");
 const neckImage = document.querySelector(".tama-neck");
+const tieHead = tamagotchi.neckwear.headTie;
 let count = 0;
 
 changeButton.addEventListener("click", () => {
@@ -59,11 +60,15 @@ changeButton.addEventListener("click", () => {
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
-// changeButton.addEventListener("click", () => {
-//   if (neckImage.src != tamagotchi.neckwear.headTie) {
-//     neckImage.classList.toggle("tie");
-//   }
-// });
+const neckwearArray = Object.values(tamagotchi.neckwear);
+const mapped = neckwearArray.map((x) => x);
+
+changeButton.addEventListener("click", () => {
+  // console.log(mapped);
+  if ((mapped[3] = neckImage.src)) {
+    neckImage.classList.toggle("tie");
+  }
+});
 
 /* Change tie button desktop */
 
@@ -145,7 +150,3 @@ function scroll(event) {
 }
 
 window.addEventListener("wheel", scroll);
-
-/* Scroll event mobile */
-
-window.TouchEvent.addEventListener("wheel", scroll);
