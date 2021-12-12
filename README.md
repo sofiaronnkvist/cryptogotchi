@@ -2,11 +2,11 @@
 
 # Cryptogotchi
 
-Text about the project. This would also be a great place to link the game on Netlify.
+Was taking care of an animal on a Tamagotchi never really your thing? Is taking care of your crypto-stocks portfolio like it's a living thing more your style? Then the Cryptogotchi is for you! You can play it [here](https://cryptogotchi.netlify.app/).
 
 # Installation
 
-Add the installation instructions.
+Clone the project to your computer and open it with localhost. Or visit the link above.
 
 # Code Review
 
