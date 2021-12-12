@@ -2,38 +2,38 @@
 
 let coins = [];
 
-const coinsContainer = document.querySelector(".coins-container");
-const coinImage = "./images/coin.svg";
+const coinsContainer = document.querySelector('.coins-container');
+const coinImage = './images/coin.svg';
 
 /* Tamagotchi svg */
 
 const tamagotchi = {
   body: {
-    first: "./images/tamagotchi/tama_first.png",
-    second: "./images/tamagotchi/tama_second.png",
+    first: './images/tamagotchi/tama_first.png',
+    second: './images/tamagotchi/tama_second.png',
   },
   mouth: {
-    normal: "./images/tamagotchi/mouth_normal.png",
-    happy: "./images/tamagotchi/mouth_happy.png",
-    sad: "./images/tamagotchi/mouth_sad.png",
+    normal: './images/tamagotchi/mouth_normal.png',
+    happy: './images/tamagotchi/mouth_happy.png',
+    sad: './images/tamagotchi/mouth_sad.png',
   },
   neckwear: {
-    bowtie: "./images/tamagotchi/bowtie.png",
-    normalTie: "./images/tamagotchi/tie_normal_new.png",
-    headTie: "./images/tamagotchi/tie_head.png",
+    bowtie: './images/tamagotchi/bowtie.png',
+    normalTie: './images/tamagotchi/tie_normal_new.png',
+    headTie: './images/tamagotchi/tie_head.png',
   },
 };
 
 /* Buy button */
 
-const buyButton = document.querySelector(".buy-button");
-const mouthImage = document.querySelector(".tama-mouth");
+const buyButton = document.querySelector('.buy-button');
+const mouthImage = document.querySelector('.tama-mouth');
 
-buyButton.addEventListener("click", () => {
-  coins.push("Coin");
-  const newCoin = document.createElement("img");
+buyButton.addEventListener('click', () => {
+  coins.push('Coin');
+  const newCoin = document.createElement('img');
   newCoin.src = coinImage;
-  newCoin.classList.add("coin-styling");
+  newCoin.classList.add('coin-styling');
 
   coinsContainer.appendChild(newCoin);
 
@@ -50,20 +50,20 @@ buyButton.addEventListener("click", () => {
 
 /* Change tie button mobile */
 
-const changeButton = document.querySelector(".change-button");
-const neckImage = document.querySelector(".tama-neck");
+const changeButton = document.querySelector('.change-button');
+const neckImage = document.querySelector('.tama-neck');
 const neckwearArray = Object.values(tamagotchi.neckwear);
 let count = 0;
 
-changeButton.addEventListener("click", () => {
+changeButton.addEventListener('click', () => {
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
 /* Change tie button desktop */
 
-const arrowButton = document.querySelector(".arrow-button");
+const arrowButton = document.querySelector('.arrow-button');
 
-document.addEventListener("keydown", logKey);
+document.addEventListener('keydown', logKey);
 
 function logKey(event) {
   if (event.keyCode === 39) {
@@ -77,35 +77,35 @@ function logKey(event) {
 
 /* Styling classes for neckwear */
 
-changeButton.addEventListener("click", setClasses);
-document.addEventListener("keydown", setClasses);
+changeButton.addEventListener('click', setClasses);
+document.addEventListener('keydown', setClasses);
 
 function setClasses() {
   let active = neckImage;
 
-  if (active.src.endsWith("/images/tamagotchi/tie_normal_new.png")) {
-    neckImage.classList.add("normalTie");
-    neckImage.classList.remove("bowtie", "headTie");
-  } else if (active.src.endsWith("/images/tamagotchi/tie_head.png")) {
-    neckImage.classList.add("headTie");
-    neckImage.classList.remove("bowtie", "normalTie");
+  if (active.src.endsWith('/images/tamagotchi/tie_normal_new.png')) {
+    neckImage.classList.add('normalTie');
+    neckImage.classList.remove('bowtie', 'headTie');
+  } else if (active.src.endsWith('/images/tamagotchi/tie_head.png')) {
+    neckImage.classList.add('headTie');
+    neckImage.classList.remove('bowtie', 'normalTie');
   } else {
-    neckImage.classList = "tama-neck bowtie";
+    neckImage.classList = 'tama-neck bowtie';
   }
 }
 
 /* Sell button */
 
-const sellButton = document.querySelector(".sell-button");
+const sellButton = document.querySelector('.sell-button');
 const mouthsArray = Object.values(tamagotchi.mouth);
 
-sellButton.addEventListener("click", () => {
-  coins.pop("Coin");
-  const lastCoin = document.querySelector(".coin-styling:last-child");
+sellButton.addEventListener('click', () => {
+  coins.pop('Coin');
+  const lastCoin = document.querySelector('.coin-styling:last-child');
   if (coins.length >= 1) {
     coinsContainer.removeChild(lastCoin);
   } else {
-    window.alert("Buy some crypto, dude!");
+    window.alert('Buy some crypto, dude!');
     while (coinsContainer.firstChild) {
       coinsContainer.removeChild(coinsContainer.firstChild);
     }
@@ -121,17 +121,17 @@ setInterval(() => {
 
 /* Crypto for your thoughts button */
 
-const cryptoButton = document.querySelector(".crypto-button");
+const cryptoButton = document.querySelector('.crypto-button');
 
-cryptoButton.addEventListener("click", () => {
+cryptoButton.addEventListener('click', () => {
   window.alert(
-    "There are no thoughts or feelings in crypto boys. Continue mining."
+    'There are no thoughts or feelings in crypto boys. Continue mining.'
   );
 });
 
 /* Scroll event desktop */
 
-const tamaBody = document.querySelector(".tama-body");
+const tamaBody = document.querySelector('.tama-body');
 const bodyArray = Object.values(tamagotchi.body);
 
 function scroll(event) {
@@ -142,11 +142,11 @@ function scroll(event) {
   }
 }
 
-window.addEventListener("wheel", scroll);
+window.addEventListener('wheel', scroll);
 
 /* Randomize coins placement */
 
-const backgroundCoins = document.querySelectorAll("img.background-coin");
+const backgroundCoins = document.querySelectorAll('img.background-coin');
 
 const bodyWidth = document.body.scrollWidth;
 const bodyHeight = document.body.offsetHeight;
@@ -157,8 +157,8 @@ for (let i = 0; i < backgroundCoins.length; i++) {
   randomTop = randomNumber(0, bodyHeight);
   randomLeft = randomNumber(0, bodyWidth);
 
-  eachCoin.style.top = randomTop + "px";
-  eachCoin.style.left = randomLeft + "px";
+  eachCoin.style.top = randomTop + 'px';
+  eachCoin.style.left = randomLeft + 'px';
 }
 
 function randomNumber(min, max) {

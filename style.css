@@ -4,9 +4,9 @@
 }
 
 @font-face {
-  font-family: "DotGothic16";
-  src: url("/fonts/DotGothic16-Regular.woff") format("woff2"),
-    url("/fonts/DotGothic16-Regular.woff2") format("woff");
+  font-family: 'DotGothic16';
+  src: url('/fonts/DotGothic16-Regular.woff') format('woff2'),
+    url('/fonts/DotGothic16-Regular.woff2') format('woff');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -17,7 +17,7 @@
   --button-grey: rgb(26, 25, 25);
   --white: #fff;
   --black: #000;
-  --font: "DotGothic16", sans-serif;
+  --font: 'DotGothic16', sans-serif;
 }
 
 body {
