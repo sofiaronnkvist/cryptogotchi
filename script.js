@@ -60,16 +60,6 @@ changeButton.addEventListener("click", () => {
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
-const neckwearArray = Object.values(tamagotchi.neckwear);
-const mapped = neckwearArray.map((x) => x);
-
-changeButton.addEventListener("click", () => {
-  // console.log(mapped);
-  if ((mapped[3] = neckImage.src)) {
-    neckImage.classList.toggle("tie");
-  }
-});
-
 /* Change tie button desktop */
 
 const arrowButton = document.querySelector(".arrow-button");
@@ -90,21 +80,22 @@ function logKey(event) {
 
 /* Styling classes for neckwear */
 
-// const neckwearArray = Object.values(tamagotchi.neckwear);
+changeButton.addEventListener("click", setClasses);
+document.addEventListener("keydown", setClasses);
 
-// if (neckImage.src !== neckwearArray[0]) {
-//   neckImage.classList.toggle("tie");
-// }
+function setClasses() {
+  let active = neckImage;
 
-// changeButton.addEventListener("click", (event) => {
-//   if (event) {
-//     if ((neckImage.src = neckwearArray[2])) {
-//       neckImage.classList.add("tie");
-//     } else {
-//       neckImage.classList.remove("tie");
-//     }
-//   }
-// });
+  if (active.src.endsWith("/images/tamagotchi/tie_normal_new.png")) {
+    neckImage.classList.add("normalTie");
+    neckImage.classList.remove("bowtie", "headTie");
+  } else if (active.src.endsWith("/images/tamagotchi/tie_head.png")) {
+    neckImage.classList.add("headTie");
+    neckImage.classList.remove("bowtie", "normalTie");
+  } else {
+    neckImage.classList = "tama-neck bowtie";
+  }
+}
 
 /* Sell button */
 
@@ -114,8 +105,13 @@ const mouthsArray = Object.values(tamagotchi.mouth);
 sellButton.addEventListener("click", () => {
   coins.pop("Coin");
   const lastCoin = document.querySelector(".coin-styling:last-child");
-  if (coins.length >= 0) {
+  if (coins.length >= 1) {
     coinsContainer.removeChild(lastCoin);
+  } else {
+    window.alert("Buy some crypto, dude!");
+    while (coinsContainer.firstChild) {
+      coinsContainer.removeChild(coinsContainer.firstChild);
+    }
   }
   mouthImage.src = mouthsArray[2];
 });

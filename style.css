@@ -70,7 +70,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin-top: 1rem;
+  margin-top: 10px;
 }
 
 .crypto-button {
@@ -142,7 +142,19 @@ body {
   top: 50%;
 }
 
-.tie {
+.bowtie {
+  height: 30%;
+  width: 19%;
+  top: 48%;
+}
+
+.normalTie {
+  height: 30%;
+  width: 19%;
+  top: 60%;
+}
+
+.headTie {
   height: 80%;
   width: 80%;
   padding-left: 19px;
