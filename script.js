@@ -52,11 +52,10 @@ buyButton.addEventListener("click", () => {
 
 const changeButton = document.querySelector(".change-button");
 const neckImage = document.querySelector(".tama-neck");
-const tieHead = tamagotchi.neckwear.headTie;
+const neckwearArray = Object.values(tamagotchi.neckwear);
 let count = 0;
 
 changeButton.addEventListener("click", () => {
-  const neckwearArray = Object.values(tamagotchi.neckwear);
   neckImage.src = neckwearArray[++count % neckwearArray.length];
 });
 
@@ -68,11 +67,9 @@ document.addEventListener("keydown", logKey);
 
 function logKey(event) {
   if (event.keyCode === 39) {
-    const neckwearArray = Object.values(tamagotchi.neckwear);
     neckImage.src = neckwearArray[++count % neckwearArray.length];
   }
   if (event.keyCode === 37) {
-    const neckwearArray = Object.values(tamagotchi.neckwear);
     const reverse = neckwearArray.reverse();
     neckImage.src = reverse[++count % reverse.length];
   }
@@ -146,3 +143,24 @@ function scroll(event) {
 }
 
 window.addEventListener("wheel", scroll);
+
+/* Randomize coins placement */
+
+const backgroundCoins = document.querySelectorAll("img.background-coin");
+
+const bodyWidth = document.body.scrollWidth;
+const bodyHeight = document.body.offsetHeight;
+
+for (let i = 0; i < backgroundCoins.length; i++) {
+  let eachCoin = backgroundCoins[i];
+
+  randomTop = randomNumber(0, bodyHeight);
+  randomLeft = randomNumber(0, bodyWidth);
+
+  eachCoin.style.top = randomTop + "px";
+  eachCoin.style.left = randomLeft + "px";
+}
+
+function randomNumber(min, max) {
+  return Math.random() * (max - min) + min;
+}

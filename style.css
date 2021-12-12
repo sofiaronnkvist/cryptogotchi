@@ -14,6 +14,9 @@
 
 :root {
   --background-blue: rgb(70, 120, 214);
+  --button-grey: rgb(26, 25, 25);
+  --white: #fff;
+  --black: #000;
   --font: "DotGothic16", sans-serif;
 }
 
@@ -21,6 +24,7 @@ body {
   background-color: var(--background-blue);
   height: 100vh;
   width: 100vw;
+  position: fixed;
 }
 
 .tama-frame {
@@ -29,7 +33,6 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: row;
   position: relative;
   top: 5vh;
   flex-wrap: wrap;
@@ -45,25 +48,24 @@ body {
   display: flex;
   gap: 1rem;
   position: absolute;
-  margin-top: 360px;
-  /* margin-bottom: 40%; */
+  align-self: flex-end;
+  margin-bottom: 120px;
 }
 
 .tama-buttons {
-  background: #fff;
+  background: var(--white);
   color: inherit;
-  border: 1px solid #000;
-  box-shadow: 3px 3px 3px rgb(26, 25, 25);
+  border: 1px solid var(--black);
+  box-shadow: 3px 3px 3px var(--button-grey);
   border-radius: 5px;
   padding: 3px;
   cursor: pointer;
-  outline: inherit;
   font-family: var(--font);
   font-size: 16px;
 }
 
 .tama-buttons:active {
-  box-shadow: 1px 1px 1px rgb(26, 25, 25);
+  box-shadow: 1px 1px 1px var(--button-grey);
 }
 
 .crypto-container {
@@ -74,10 +76,10 @@ body {
 }
 
 .crypto-button {
-  background: #fff;
+  background: var(--white);
   color: inherit;
-  border: 1px solid #000;
-  box-shadow: 3px 3px 3px rgb(26, 25, 25);
+  border: 1px solid var(--black);
+  box-shadow: 3px 3px 3px var(--button-grey);
   border-radius: 5px;
   padding: 7px;
   cursor: pointer;
@@ -87,7 +89,7 @@ body {
 }
 
 .crypto-button:active {
-  box-shadow: 1px 1px 1px rgb(26, 25, 25);
+  box-shadow: 1px 1px 1px var(--button-grey);
 }
 
 .coins-container {
@@ -165,6 +167,19 @@ body {
   display: none;
 }
 
+.background-coins-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+.background-coin {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  height: 30px;
+  z-index: -1;
+}
+
 @media only screen and (min-width: 768px) {
   .change-button {
     display: none;
@@ -172,12 +187,10 @@ body {
   .arrow-button {
     display: block;
   }
-  .buttons-container {
-    margin-top: 400px;
-  }
   .tama-buttons {
     font-size: 20px;
   }
+  .buttons-container {
+    margin-bottom: 100px;
+  }
 }
-
-/* @media only screen and (min-width: ); */
