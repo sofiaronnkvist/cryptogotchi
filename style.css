@@ -163,6 +163,11 @@ body {
 
 .arrow-button {
   display: none;
+  cursor: auto;
+}
+
+.arrow-button:active {
+  box-shadow: 3px 3px 3px var(--button-grey);
 }
 
 .background-coin {
