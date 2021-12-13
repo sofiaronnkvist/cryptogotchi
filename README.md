@@ -20,5 +20,5 @@ Clone the project to your computer and open it with localhost. Or visit the link
 
 Tested by the following people:
 
-1. Jane Doe
-2. John Doe
+1. [Nema Vinkeloe Uuskyla](https://github.com/patrosk)
+2. [Agnes Skönvall](https://github.com/agnesskonvall)
